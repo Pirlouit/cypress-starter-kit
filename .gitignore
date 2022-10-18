@@ -1,0 +1,7 @@
+screenshots/
+videos/
+cypress/reports/*
+!cypress/reports/cucumber/
+cypress/cucumber-json
+.nyc_output
+node_modules/

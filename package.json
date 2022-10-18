@@ -1,0 +1,38 @@
+{
+    "name": "cypress-starter-kit",
+    "version": "1.0.0",
+    "description": "",
+    "author": "Pirlouit PROVIS",
+    "license": "ISC",
+    "scripts": {
+        "start": "cypress open",
+        "cypress:open": "cypress open",
+        "cypress:verify": "cypress verify",
+        "cypress:version": "cypress version",
+        "livedoc": "chr"
+    },
+    "dependencies": {
+        "@copfrontend/cypress-components": "^2.0.0",
+        "@copfrontend/cypress-cucumber-html-report": "^1.0.0",
+        "@cypress/webpack-preprocessor": "^5.12.0",
+        "cypress": "^9.7.0",
+        "cypress-cucumber-preprocessor": "^4.3.1",
+        "start-server-and-test": "^1.14.0",
+        "ts-loader": "^6.2.2",
+        "webpack": "^4.46.0"
+    },
+    "devDependencies": {
+        "@types/cypress-cucumber-preprocessor": "^4.0.1",
+        "typescript": "^4.7.4"
+    },
+    "cypress-cucumber-preprocessor": {
+        "commonPath": "cypress/integration/features/common",
+        "nonGlobalStepDefinitions": true,
+        "cucumberJson": {
+            "generate": true,
+            "outputFolder": "cypress/reports/cucumber",
+            "filePrefix": "",
+            "fileSuffix": ".cucumber"
+        }
+    }
+}
