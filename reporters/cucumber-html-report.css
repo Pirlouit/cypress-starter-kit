@@ -1,0 +1,8 @@
+div.scenario-step-container a[data-toggle="collapse"] {
+  display: none;
+}
+
+div.x_content > div.scenario-step-collapse {
+  display: block;
+  height: auto !important;
+}

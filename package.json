@@ -1,0 +1,35 @@
+{
+  "name": "cypress-starter-kit",
+  "version": "1.0.0",
+  "description": "A starter kit for writing integration or end to end tests",
+  "author": "Pirlouit PROVIS",
+  "license": "MIT",
+  "scripts": {
+    "start": "cypress open",
+    "test": "cypress run",
+    "cucumber": "cypress run -s '**/*.feature'",
+    "livedoc": "node ./reporters/cucumber-html-report.js",
+    "cucumber:livedoc": "npm run cucumber && npm run livedoc"
+  },
+  "dependencies": {
+    "@axa-fr/cypress-component": "^0.0.9",
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+    "cypress": "^12.5.1",
+    "esbuild": "^0.17.8",
+    "multiple-cucumber-html-reporter": "^3.3.0",
+    "typescript": "^4.9.5"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.{js,ts}",
+      "cypress/e2e/[filepath].{js,ts}",
+      "cypress/support/step_definitions/**/*.{js,ts}"
+    ],
+    "json": {
+      "enabled": true,
+      "formatter": "reporters/cucumber-json-formatter",
+      "output": "cypress/reports/cucumber.json"
+    }
+  }
+}
