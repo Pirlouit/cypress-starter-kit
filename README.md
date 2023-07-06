@@ -1,59 +1,57 @@
 # Cypress Starter Kit
 
-[Cypress](https://www.cypress.io) est une alternative à [Selemnium](https://www.selenium.dev/) et permet d'écrire des tests simples rapides et fiables.  
-Il a pour but de simplifier la mise en place de tests d'intégration ou end-to-end, qui pouvaient souvent être assez complexes.
+[Cypress](https://www.cypress.io) is an alternative to [Selenium](https://www.selenium.dev/) and allows you to write simple, fast, and reliable tests. It aims to simplify the setup of integration or end-to-end tests, which can often be quite complex.
 
-Ce répository a pour but de créer des tests d'intégration et de bout en bout sur un projet. Il utilise le package [`cypress-component`](https://github.com/AxaFrance/cypress-component) car il simplifie l'accès aux éléments HTML utlisés au travers de vos fichiers de tests. Il vous permet de naviguer dans l'application de manières plus fonctionelle et de rentrer les données souhaitées exactement comme depuis votre navigateur. Vous pouvez ensuite faire des assertions pour vous assurez que l'application a bien le comportement souhaité.
+This repository aims to create integration and end-to-end tests for a project. It uses the `cypress-component` package because it simplifies access to the HTML elements used in your test files. It allows you to navigate through the application in a more functional way and enter the desired data exactly as you would in your browser. You can then make assertions to ensure that the application behaves as expected.
 
-[[TOC]]
+## Why Cypress?
 
-## Pourquoi Cypress ?
+Cypress works completely differently from other testing tools. Cypress runs directly inside the browser, unlike Selenium, which runs outside of a browser and uses the network to send commands to a remote server. Additionally, it uses a Node.js server that can directly respond to application events. It also allows you to modify network traffic and modify the content of an HTTP response.
 
-Il fonctionne de manière complètement différente des autres outils de test. Cypress s'éxecute directement à l'intèrieur du navigateur contrairement à Selenium qui s’exécute à l'extérieur d'un navigateur et utilise le réseau pour envoyer des commandes à un serveur distant. De plus, il utilise un serveur Node.js qui permet de répondre directement aux évènements de l’application. Il permet également de modifier le trafic réseau et ainsi modifier le contenu de la réponse d’une requête http.
+Its installation is extremely simple as it runs locally.
 
-Son installation est extrêmement simple car il s’exécute en local.
+## Prerequisites
 
-## Pré-requis
+To be able to use Cypress, you will need:
 
-Pour pouvoir utiliser Cypress vous allez avoir besoin de:
+- Node.js: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+- NPM: It should be installed along with Node.js
+- VS Code (optional): [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 
-- [NodeJs](https://nodejs.org/en/): <https://nodejs.org/en/download/>
-- [NPM](https://nodejs.org/en/): Il devrait logiquement être installé avec NodeJs
-- [VS Code](https://code.visualstudio.com): <https://code.visualstudio.com/download> (optionnel)
-
-Guide d'installation: <https://phoenixnap.com/kb/install-node-js-npm-on-windows>
+Installation guide: [https://phoenixnap.com/kb/install-node-js-npm-on-windows](https://phoenixnap.com/kb/install-node-js-npm-on-windows)
 
 ## Installation
 
-- Cloner le repository à l'aide de git dans un nouveau dossier (example: integration-tests)
+- Clone the repository using git into a new folder (e.g., integration-tests)
+- At the root, run the command `npm i`
 
-> 💡 Tips: Créer un dossier au même niveau que votre application. Ne mélangez pas vos tests écrits en Cypress avec vos sources. Il est préférable d'avoir un projet NPM distinct dans un dossier distinct (idéalement au même niveau que votre application).
+> 💡 Tips: Create a separate folder at the same level as your application. Avoid mixing your tests written in Cypress with your source code. It is preferable to have a separate NPM project in a distinct folder (ideally at the same level as your application).
 
 Example:
 
-```
+```text
 -Sources/
 --client/
----client-app/ <- votre appplication
+---client-app/ <- your appplication
 ----src/
 ----package.json
----integration-tests/ <- votre dossier de tests
+---integration-tests/ <- your tests folder
 --sever/
 ---...
 ```
 
 - A la racine éxécuter la commande `npm i`
 
-## Lancement
+## Launching
 
-A la racine éxécuter une des commandes suivantes:
+At the root, run one of the following commands:
 
-- `npm start`: pour lancer les tests dans l'outils Cypress
-- `npm test`: pour lancer les tests en headless
-- `npm run cucumber`: pour lancer les tests écrits en Gherkin
-- `npm run livedoc`: pour générer la documentation vivante
+- `npm start`: to launch the tests in the Cypress tool
+- `npm test`: to launch the tests in headless mode
+- `npm run cucumber`: to launch the tests written in Gherkin
+- `npm run livedoc`: to generate the living documentation
 
-> 💡 Tips: Si vous voulez exécuter vos tests en local, vous pouvez combiner un script de lancement de votre application et un autre éxécutant Cypress à l'aide du package [`start-server-and-test`](https://github.com/bahmutov/start-server-and-test). Ce package va lancer votre application en locale et attendre que votre server réponde. Pour ensuite lancer l'éxécution de vos tests.
+> 💡 Tips: If you want to run your tests locally, you can combine a script to start your application and another script to run Cypress using the [`start-server-and-test`](https://github.com/bahmutov/start-server-and-test) package. This package will launch your application locally and wait for your server to respond before executing your tests.
 
 ### Exemple
 
@@ -70,15 +68,15 @@ A la racine éxécuter une des commandes suivantes:
 
 ## Documentation
 
-### Cypress component
+### Cypress Component
 
-Cypress-component a pour but de faciliter la lecture et l'écriture de tests Cypress. Il améliore l'accessibilité des éléments du DOM via une approche par composants, comme les frameworks web actuel. Il facilite également la gestion des routes que ce soit dans un environnement bouchonné ou non.
+Cypress Component aims to facilitate the reading and writing of Cypress tests. It improves the accessibility of DOM elements through a component-based approach, similar to modern web frameworks. It also facilitates the management of routes, whether in a mocked or non-mocked environment.
 
-> La documentation: [`cypress-component`](https://github.com/AxaFrance/cypress-component)
+> Documentation: [`cypress-component`](https://github.com/AxaFrance/cypress-component)
 
-La déclaration des composants se fait dans le dossier `cypres/components`.
+Component declarations are done in the `cypress/components` folder.
 
-#### Example de componsants
+#### Components example
 
 ```ts
 // todo.ts
@@ -97,9 +95,9 @@ export const TodoCard = {
 };
 ```
 
-Cypress-component facilite également la gestion des [routes](https://docs.cypress.io/guides/guides/network-requests). Vous pouvez les définir dans le fichier `cypress/common/routes.ts.`
+Cypress-component alos facilitates [routes](https://docs.cypress.io/guides/guides/network-requests) managment. You can define them in the file `cypress/common/routes.ts.`
 
-#### Example de déclaration de routes
+#### Routes declaration example
 
 ```ts
 // routes.ts
@@ -133,13 +131,13 @@ export const RoutesDefinition: RouteDef = {
 };
 ```
 
-### Tests Cypress
+### Cypress Tests
 
-Dans ce projet vous allez pouvoir écrire des tests en Cypress ou en Gherkin. Les tests Cypress se trouve dans le dossier `cypres/e2e`. Un test écrit en cypress se présente sous la forme `[testName].cy.ts`.
+In this project, you can write tests in Cypress or Gherkin. The Cypress tests are located in the `cypress/e2e` folder. A test written in Cypress has the format `[testName].cy.ts`.
 
-#### Example de test écrit avec cypress-component
+#### Example of Cypress Test using cypress-component
 
-> Pour plus d'infos: [`cypress-component`](https://github.com/AxaFrance/cypress-component)
+> See more: [`cypress-component`](https://github.com/AxaFrance/cypress-component)
 
 ```ts
 describe("To do", () => {
@@ -175,15 +173,15 @@ describe("To do", () => {
 });
 ```
 
-> Pour plus de tests consulter le dossier `cypress/e2e/examples`
+> Fore more examples check `cypress/e2e/examples`
 
-### Tests en Gherkin
+### Tests in Gherkin
 
-Les tests écrits en Gherkin se trouve dans le dossier `cypres/e2e/features`. Les tests Gherkin se trouve dans un dossier nommé `/[featureName]` avec à l'intèrieur un fichier `[featureName].feature` et l'implémentaions de étapes dans `[featureName].ts`. Vous pouvez également implémenter des étapes partagées entre différentes features dans le dossier `cypress/support/step_definitions`.
+The tests written in Gherkin are located in the `cypress/e2e/features` folder. The Gherkin tests are organized in folders named after the feature, with a `[featureName].feature` file inside and step implementations in `[featureName].ts`. You can also implement shared steps between different features in the `cypress/support/step_definitions` folder.
 
-Les compatibilité des scénraio Gherkin avec Cypress est assuré par le package [@badeball/cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
+The compatibility of Gherkin scenarios with Cypress is ensured by the [@badeball/cypress-cucumber-preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor) package.
 
-#### Example de feature et son implémentation
+#### Example of a feature and its implementation
 
 ```feature
 # todo.feature
@@ -191,14 +189,14 @@ Les compatibilité des scénraio Gherkin avec Cypress est assuré par le package
 Feature: ToDo List
 
     Scenario: Add a todo
-        Given je visite "https://example.cypress.io/todo"
-        When j'ajoute un todo appelé "Laundry"
-        Then j'otiens bien un nouveau todo dans ma liste: "Laundry"
+        Given I visit "https://example.cypress.io/todo"
+        When I add a todo called "Laundry"
+        Then I should see a new todo in my list: "Laundry"
 
     Scenario: Complete a task
-        Given je visite "https://example.cypress.io/todo"
-        When je valide le premier todo de la liste
-        Then le premier todo apparait complété
+        Given I visit "https://example.cypress.io/todo"
+        When I complete the first todo in the list
+        Then the first todo should appear as completed
 ```
 
 ```ts
@@ -208,55 +206,52 @@ import { Given, Then, When } from "@badeball/cypress-cucumber-preprocessor";
 import { Browser } from "@axa-fr/cypress-component";
 import { TodoCard } from "../../../common/components/todos";
 
-Given("je visite {string}", (url: string) => {
+Given("I visit {string}", (url: string) => {
   Browser.visit(url);
 });
 
-When("j'ajoute un todo appelé {string}", (todo: string) => {
+When("I add a todo called {string}", (todo: string) => {
   TodoCard.addTodoInput.set(todo);
 });
 
-When("je valide le premier todo de la liste", () => {
+When("I complete the first todo in the list", () => {
   TodoCard.items.first().find("input[type=checkbox]").check();
 });
 
-Then(
-  "j'otiens bien un nouveau todo dans ma liste: {string}",
-  (todo: string) => {
-    TodoCard.items.should((items) => {
-      expect(items).to.have.length(3);
-    });
-    TodoCard.items.last().should((lastItem) => {
-      expect(lastItem).to.have.text(todo);
-    });
-  }
-);
+Then("I should see a new todo in my list: {string}", (todo: string) => {
+  TodoCard.items.should((items) => {
+    expect(items).to.have.length(3);
+  });
+  TodoCard.items.last().should((lastItem) => {
+    expect(lastItem).to.have.text(todo);
+  });
+});
 
-Then("le premier todo apparait complété", (todo: string) => {
+Then("the first todo should appear as completed", () => {
   TodoCard.items.first().should((item) => {
     expect(item).to.have.class("completed");
   });
-});
+}); 
 ```
 
-> Pour plus d'infos: [`@badeball/cypress-cucumber-preprocessor`](https://github.com/badeball/cypress-cucumber-preprocessor) et pour plus de features, consultez le dossier `cypress/e2e/features`
+> For more information, refer to [`@badeball/cypress-cucumber-preprocessor`](https://github.com/badeball/cypress-cucumber-preprocessor). For additional features, please check the `cypress/e2e/features` folder.
 
-### Documentation vivante
+### Living Documentation
 
-Après que vous ayez joué vos test d'intégration via la commande `npm run cucumber`, vous allez pouvoir générer une documentation vivante via la commande `npm run livedoc`. La documentation se trouve dans le dossier `cypress/reports/cucumber-html`.
+After running your integration tests using the `npm run cucumber` command, you can generate living documentation using the `npm run livedoc` command. The documentation can be found in the `cypress/reports/cucumber-html` folder.
 
-> 💡 Info: Pour que tout cela soit possible, un json formatter se trouve dans le dossier /reporters (en réalité, il y en a 2: windows et linux). Vous trouverez d'avantages d'inforations [ici](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md)
+> 💡 Note: To enable this feature, a JSON formatter is located in the `/reporters` folder (two versions available: one for Windows and one for Linux). More information can be found [here](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/json-report.md).
 
-Le rapport se présente sous la forme suivante:
+The generated report has the following structure:
 
 ![Features](./assets/livedoc_1.png)
 
-Où vous retrouvez vos diférentes features. Si vous cliquer sur une feature, vous aurez les scénarios détaillés de cette feature.
+Here, you can find the different features. Clicking on a feature will display detailed scenarios.
 
 <table border="0">
     <thead>
-        <th>Example d'un scénario en succès</th>
-        <th>Example d'un scénario en échec</th>
+        <th>Example of a successful scenario</th>
+        <th>Example of a failed scenario</th>
     </thead>
     <tr>
         <td><img alt="succeeded feature" src="./assets/livedoc_2.png" /></td>
@@ -266,5 +261,5 @@ Où vous retrouvez vos diférentes features. Si vous cliquer sur une feature, vo
 
 ## Contribute
 
-- [How to run the solution and to contribute](./CONTRIBUTING.md)
+- [How to run the solution and contribute](./CONTRIBUTING.md)
 - [Please respect our code of conduct](./CODE_OF_CONDUCT.md)
