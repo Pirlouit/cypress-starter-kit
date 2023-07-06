@@ -40,7 +40,7 @@ Example:
 ---...
 ```
 
-- A la racine éxécuter la commande `npm i`
+- In the root folder, execute the following: `npm i`
 
 ## Launching
 
